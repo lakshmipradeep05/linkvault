@@ -1,22 +1,20 @@
 # 🔗 LinkVault
 
-# 🔗 LinkVault
+A full-stack bookmark manager where users can save, organize, and retrieve links efficiently using tags and collections.
 
-A full-stack bookmark manager where you can save, organize, and retrieve links efficiently using tags and collections.
-
-> Built with Django REST Framework + React as a learning project to get familiar with full-stack web development.
+> Built with Django REST Framework + React
 
 ---
 
-## ✨ Features
+## Features
 
-- 🔐 **Authentication** — Secure signup and login with JWT tokens
-- 🔗 **Link Management** — Save, delete, and mark links as read/unread
-- 🏷️ **Tags** — Label your links and filter by tag
-- 📁 **Collections** — Organize links into folders and filter by collection
-- ⚡ **Quick Capture** — Instantly save a URL without filling a form
-- 🔍 **Search** — Search links by title, URL, or note
-- 📱 **Responsive UI** — Clean, fast interface built with Tailwind CSS
+- **Authentication** — Secure signup and login with JWT tokens
+- **Link Management** — Save, delete, and mark links as read/unread
+- **Tags** — Label links and filter by tag
+- **Collections** — Organize links into folders and filter by collection
+- **Quick Capture** — Instantly save a URL without filling a form
+- **Search** — Search links by title, URL, or note
+- **Responsive UI** — Clean, fast interface built with Tailwind CSS
 
 ---
 
@@ -44,39 +42,21 @@ A full-stack bookmark manager where you can save, organize, and retrieve links e
 ## 📸 Screenshots
 
 ### Login Page
-> Clean login screen with username and password fields.
+
+> <img width="1912" height="882" alt="image" src="https://github.com/user-attachments/assets/4f011930-f595-40f2-83a0-75f276b52167" />
+
 
 ### Dashboard
-> Sidebar with Collections and Tags for filtering.
-> Quick capture bar at the top for instant link saving.
-> Search bar to find links by title, URL, or note.
+<img width="1909" height="894" alt="image" src="https://github.com/user-attachments/assets/1be33745-8da5-4d7a-b1a8-e1dee6c510c4" />
+
+
 
 ### Add Link Modal
-> Form with URL, title, note, collection dropdown, and tag selector.
+<img width="1894" height="879" alt="image" src="https://github.com/user-attachments/assets/035c9c8b-b012-4b6c-8d4f-062222806ee2" />
+
 
 ---
 
-## 🗂️ Project Structure
-
-```
-linkvault/
-├── linkvault-backend/    # Django REST API
-│   ├── accounts/         # Signup & Login views
-│   ├── links/            # Links, Tags, Collections
-│   │   ├── models.py
-│   │   ├── serializers.py
-│   │   ├── views.py
-│   │   └── urls.py
-│   └── core/             # Settings, URLs, JWT config
-│
-└── linkvault-frontend/   # React Application
-    └── src/
-        ├── api/          # Axios instance
-        ├── pages/        # Login, Signup, Dashboard
-        └── components/   # Navbar, LinkCard
-```
-
----
 
 ## 🚀 Setup Instructions
 
@@ -88,22 +68,7 @@ See [linkvault-frontend setup guide](./linkvault-frontend/README.md)
 
 ---
 
-## 📡 API Endpoints
 
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/api/auth/signup/` | Register a new user |
-| POST | `/api/auth/login/` | Login and get JWT tokens |
-| GET | `/api/links/` | Get all links |
-| POST | `/api/links/` | Create a new link |
-| PATCH | `/api/links/:id/` | Update a link |
-| DELETE | `/api/links/:id/` | Delete a link |
-| GET | `/api/tags/` | Get all tags |
-| POST | `/api/tags/` | Create a tag |
-| GET | `/api/collections/` | Get all collections |
-| POST | `/api/collections/` | Create a collection |
-
----
 
 ## 👤 Author
 
