@@ -1,16 +1,88 @@
-# React + Vite
+# LinkVault — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Tailwind CSS frontend for the LinkVault bookmark manager.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Requirements
 
-## React Compiler
+- Node.js v22.17.1
+- npm
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Key Libraries
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Library | Version | Purpose |
+|---|---|---|
+| react | ^19.0.0 | UI framework |
+| react-dom | ^19.0.0 | DOM rendering |
+| react-router-dom | ^7.4.1 | Client-side routing |
+| axios | ^1.8.4 | HTTP requests to Django API |
+| tailwindcss | ^3.4.17 | Utility-first CSS styling |
+| vite | ^6.2.0 | Build tool and dev server |
+
+---
+
+## Setup
+
+**1. Navigate to the frontend folder**
+
+    cd linkvault-frontend
+
+**2. Install dependencies**
+
+    npm install
+
+**3. Configure API URL**
+
+Open `src/api/axios.js` and make sure the base URL points to your Django backend:
+
+    baseURL: 'http://127.0.0.1:8000/api'
+
+**4. Start the development server**
+
+    npm run dev
+
+App runs at `http://localhost:5173`
+
+> Make sure the Django backend is running before starting the frontend.
+
+---
+
+## Pages & Features
+
+### Login Page — `/login`
+- Username and password input fields
+- Submits credentials to `/api/auth/login/`
+- On success, stores JWT access and refresh tokens in localStorage
+- Redirects to Dashboard on successful login
+- Shows error message on invalid credentials
+- Link to Signup page
+
+### Signup Page — `/signup`
+- Username and password input fields
+- Submits to `/api/auth/signup/`
+- Redirects to Login page after successful registration
+- Shows error if username is already taken
+
+### Dashboard Page — `/`
+- Protected route — redirects to Login if not authenticated
+- **Sidebar** showing all Collections and Tags for filtering
+- Clicking a Collection filters links belonging to that folder
+- Clicking a Tag filters links with that label
+- **Quick Capture Bar** — paste any URL and press Enter to instantly save it
+- **Search Bar** — filters links in real time by title, URL, or note
+- **+ Add Link Button** — opens a modal to save a new link with full details
+- **Link Cards** showing title, URL, note, tags, and collection
+- **Mark Read / Unread** button on each link card
+- **Delete** button on each link card
+- **Logout** button in the navbar
+
+### Add Link Modal
+- URL field (required)
+- Title field (optional)
+- Note field (optional)
+- Collection dropdown — assign link to a folder
+- Tag selector — click tags to toggle them on/off
+- Save and Cancel buttons
